@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Article</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Edit Article</h1>
+    <form action="/admin/edit/<%= article.id %>" method="POST">
+        <input type="text" name="title" value="<%= article.title %>" required>
+        <textarea name="content" required><%= article.content %></textarea>
+        <input type="date" name="date" value="<%= article.date %>" required>
+        <button type="submit">Update</button>
+    </form>
+    <a href="/admin">Back to Dashboard</a>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Admin Dashboard</h1>
+    <nav>
+        <a href="/admin/add">Add New Article</a>
+        <a href="/logout">Logout</a>
+    </nav>
+    <h2>Articles</h2>
+    <ul>
+        <% articles.forEach(article => { %>
+            <li>
+                <strong><%= article.title %></strong> (<%= article.date %>)
+                <a href="/admin/edit/<%= article.id %>">Edit</a>
+                <form action="/admin/delete/<%= article.id %>" method="POST" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        <% }) %>
+    </ul>
+</body>
+</html>
